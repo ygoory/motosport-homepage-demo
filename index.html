@@ -101,6 +101,7 @@ html.gl-ready .fallback{opacity:0;pointer-events:none}
 .placard .k{font-size:12px;letter-spacing:.14em;color:var(--dim)}
 .placard .m{font-family:var(--latin);font-weight:700;font-size:clamp(22px,2vw,30px);letter-spacing:.04em;line-height:1;direction:ltr;text-align:start}
 .placard .t{font-size:14px;color:var(--muted)}
+.placard .pl-go{justify-self:start;margin-top:6px;font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;pointer-events:auto}.placard .pl-go:hover{text-decoration:underline}
 .placard .t b{color:var(--accent);font-weight:500}
 
 .hero-bar{position:relative;z-index:3;display:flex;align-items:stretch;gap:24px;padding-bottom:28px}
@@ -383,6 +384,7 @@ footer{border-top:1px solid var(--line);padding-block:64px 32px;background:#0506
         <span class="k">על הבמה</span>
         <span class="m" id="plModel">KTM Macina Kapoho Exonic</span>
         <span class="t" id="plType"><b>e-MTB</b> · שיכוך מלא · 2027</span>
+        <a class="pl-go" id="plGo" href="https://motosportsales.wobily.com/p/Macina-Kapoho-Master-2025" target="_top">למפרט המלא ←</a>
       </div>
     </div>
   </div>
@@ -416,19 +418,19 @@ footer{border-top:1px solid var(--line);padding-block:64px 32px;background:#0506
       <div class="bl"><img src="./logo-ktm-white.svg" alt="KTM Bikes" width="130" height="60" loading="lazy"></div>
       <span class="origin">MATTIGHOFEN · AUSTRIA</span>
       <p>הנדסה אוסטרית לאופני הרים, חשמליים וכביש — סדרות Macina, Prowler ועוד, בדיוק של יצרן אירופי ותיק.</p>
-      <a href="#models">לדגמי KTM ←</a>
+      <a href="https://motosportsales.wobily.com/c/אופני-KTM" target="_top">לדגמי KTM ←</a>
     </article>
     <article class="brand-cell" style="--c:var(--bh)">
       <div class="bl bh"><img src="./logo-bh-white.png" alt="BH Bikes" width="400" height="294" loading="lazy"></div>
       <span class="origin">VITORIA-GASTEIZ · SPAIN</span>
       <p>מותג ספרדי עם מסורת מרוצים: e-MTB מסדרות iLYNX+ ו-LYNX, ואופני כביש מקרבון כמו RS1.</p>
-      <a href="#models">לדגמי BH ←</a>
+      <a href="https://motosportsales.wobily.com/c/אופני-BH" target="_top">לדגמי BH ←</a>
     </article>
     <article class="brand-cell" style="--c:var(--whistle)">
       <div class="bl wh"><img src="./logo-whistle-white.png" alt="Whistle" width="400" height="34" loading="lazy"></div>
       <span class="origin">MONZA · ITALY</span>
       <p>חטיבת הספורט של Atala האיטלקית (מאז 1907): אופני הרים, e-MTB מקרבון מסדרת B-Rush, כביש וגראבל.</p>
-      <a href="#models">לדגמי Whistle ←</a>
+      <a href="https://motosportsales.wobily.com/c/whistlebikes" target="_top">לדגמי Whistle ←</a>
     </article>
   </div>
 </section>
@@ -630,7 +632,7 @@ footer{border-top:1px solid var(--line);padding-block:64px 32px;background:#0506
           <img class="wh" src="./logo-whistle-white.png" alt="Whistle" width="400" height="34" loading="lazy">
         </div>
       </div>
-      <div><h4>מותגים</h4><ul><li><a href="#brands">KTM Bikes</a></li><li><a href="#brands">BH Bikes</a></li><li><a href="#brands">Whistle</a></li></ul></div>
+      <div><h4>מותגים</h4><ul><li><a href="https://motosportsales.wobily.com/c/אופני-KTM" target="_top">KTM Bikes</a></li><li><a href="https://motosportsales.wobily.com/c/אופני-BH" target="_top">BH Bikes</a></li><li><a href="https://motosportsales.wobily.com/c/whistlebikes" target="_top">Whistle</a></li></ul></div>
       <div><h4>קטגוריות</h4><ul><li><a href="#categories">אופני הרים</a></li><li><a href="#categories">אופניים חשמליים</a></li><li><a href="#categories">אופני כביש</a></li><li><a href="#categories">אופני גראבל</a></li><li><a href="#categories">אופניים עירוניים</a></li></ul></div>
       <div><h4>שירות</h4><ul><li><a href="#dealers">מצא משווק</a></li><li><a href="#stats">אחריות יבואן</a></li><li><a href="#dealers">הצטרפות כמשווק</a></li><li><a href="#footer">צור קשר</a></li></ul></div>
     </div>
@@ -697,6 +699,7 @@ footer{border-top:1px solid var(--line);padding-block:64px 32px;background:#0506
     setTimeout(function(){
       document.getElementById('plModel').textContent = m.model;
       document.getElementById('plType').innerHTML = m.type;
+      var PU={'ktm-kapoho-exonic':'/p/Macina-Kapoho-Master-2025','ktm-kapoho-master':'/p/Macina-Kapoho-Master-2025','ktm-prowler-prestige':'/p/Macina-Prowler-Exonic-CX-R-2026','ktm-gravelator-supreme':'/p/GRAVELATOR-PRO-2026','bh-dl-977':'/p/iLYNX-DL-ENDURO-CARBON-9-7','bh-dl-917':'/p/iLYNX-DL-ENDURO-CARBON-9-8','bh-sl-977':'/p/BH-iLynx-SL-Trail-Carbon-8-7','bh-nx-977':'/p/BH-iLynx-NX-Trail-Carbon-8-8-2026','bh-nx-907':'/p/BH-iLynx-NX-Trail-Carbon-8-8-2026','whistle-brush-c136':'/p/B-RUSH-C12-5'}; var key=m.img.split('/').pop().replace('.webp',''); document.getElementById('plGo').href='https://motosportsales.wobily.com'+(PU[key]||['/c/אופני-KTM','/c/אופני-BH','/c/whistlebikes'][m.b]);
       placard.classList.remove('swap');
     }, reduce ? 0 : 380);
     if (gl3d) gl3d.show(i, dir);
@@ -749,7 +752,8 @@ footer{border-top:1px solid var(--line);padding-block:64px 32px;background:#0506
       bh:'<span class="tag bh"><img src="./logo-bh-white.png" alt="BH" width="400" height="294"></span>',
       whistle:'<span class="tag wh"><img src="./logo-whistle-white.png" alt="Whistle" width="400" height="34"></span>'
     };
-    function P(b, img, kind, a, bspan, c1, c2, c3, l2){ return {b:b, img:img, kind:kind, a:a, s:bspan, rows:[['קטגוריה',c1],[l2||'מתלים',c2],['שימוש',c3]]}; }
+    var DS='https://motosportsales.wobily.com', CAT={ktm:'/c/אופני-KTM',bh:'/c/אופני-BH',whistle:'/c/whistlebikes'}; var U={'ktm-kapoho-exonic':'Macina-Kapoho-Master-2025','ktm-kapoho-master':'Macina-Kapoho-Master-2025','ktm-prowler-prestige':'Macina-Prowler-Exonic-CX-R-2026','ktm-gravelator-supreme':'GRAVELATOR-PRO-2026','bh-dl-977':'iLYNX-DL-ENDURO-CARBON-9-7','bh-dl-917':'iLYNX-DL-ENDURO-CARBON-9-8','bh-sl-977':'BH-iLynx-SL-Trail-Carbon-8-7','bh-nx-977':'BH-iLynx-NX-Trail-Carbon-8-8-2026','bh-nx-907':'BH-iLynx-NX-Trail-Carbon-8-8-2026','whistle-brush-c136':'B-RUSH-C12-5'};
+    function P(b, img, kind, a, bspan, c1, c2, c3, l2){ return {b:b, img:img, u:U[img], kind:kind, a:a, s:bspan, rows:[['קטגוריה',c1],[l2||'מתלים',c2],['שימוש',c3]]}; }
     var POOL = [
       P('ktm','ktm-kapoho-exonic','e-MTB','Kapoho','Exonic','הרים חשמליים','שיכוך מלא','טרייל / אול-מאונטן'),
       P('bh','bh-dl-977','e-MTB','DL Enduro','9.7','הרים חשמליים','שיכוך מלא','אנדורו'),
@@ -770,7 +774,7 @@ footer{border-top:1px solid var(--line);padding-block:64px 32px;background:#0506
         '<img src="./' + m.img + '.webp" alt="' + m.a + ' ' + m.s + '" loading="lazy" width="1400" height="800"></div>' +
         '<div class="body"><h3>' + m.a + ' <span>' + m.s + '</span></h3><dl class="specs">' +
         m.rows.map(function(r){ return '<div><dt>' + r[0] + '</dt><dd>' + r[1] + '</dd></div>'; }).join('') +
-        '</dl><div class="actions"><a href="#models">למפרט המלא ←</a></div></div>';
+        '</dl><div class="actions"><a href="'+(m.u?DS+'/p/'+m.u:DS+CAT[m.b])+'" target="_top">למפרט המלא ←</a></div></div>';
     }
     function fill(card, m){ card.style.setProperty('--c', 'var(--' + m.b + ')'); card.innerHTML = html(m); }
     var next = 0;
