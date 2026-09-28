@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>קטלוג דגמים — D.L.B Motosport</title>
+<meta name="theme-color" content="#07080a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080a;--bg-2:#0c0e11;--surface:#111317;--surface-2:#171a1f;
+  --line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.14);
+  --text:#f3f2ef;--muted:#9aa0a7;--dim:#5f656d;
+  --accent:#ff6a00;--ktm:#ff6a00;--bh:#e30613;--whistle:#14c8c2;
+  --font:'Heebo','Assistant','Arial Hebrew','Segoe UI',system-ui,sans-serif;
+  --latin:'Barlow Condensed','Heebo','Arial Narrow',sans-serif;
+  --gutter:clamp(16px,4vw,56px);--max:1440px;--ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.latin{font-family:var(--latin);letter-spacing:.06em;direction:ltr;unicode-bidi:isolate}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(7,8,10,.82);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:32px;height:84px}
+.nav .logo img{height:54px;width:auto}
+.nav-links{display:flex;gap:28px;margin-inline-start:auto;font-size:15px;color:#c9ccd0}
+.nav-links a{padding-block:6px;border-bottom:1px solid transparent}
+.nav-links a:hover,.nav-links a[aria-current]{color:#fff;border-color:var(--accent)}
+.nav-cta{display:inline-flex;align-items:center;gap:10px;height:42px;padding-inline:18px;border:1px solid var(--line-2);border-radius:999px;font-size:14px;font-weight:500}
+.nav-cta::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.nav-cta:hover{border-color:var(--accent)}
+
+/* hero */
+.head{padding-block:clamp(40px,6vw,80px) 28px;background:radial-gradient(60% 120% at 80% 0%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%)}
+.crumbs{font-size:13px;color:var(--dim);margin:0 0 14px;display:flex;gap:8px}
+.crumbs a:hover{color:var(--text)}
+.kicker{font-family:var(--latin);letter-spacing:.24em;font-size:13px;color:var(--muted);margin:0 0 8px;direction:ltr;text-align:right}
+h1{margin:0;font-size:clamp(40px,6vw,84px);line-height:.95;font-weight:900;letter-spacing:-.01em;text-wrap:balance}
+h1 span{color:var(--accent)}
+.lead{max-width:60ch;color:var(--muted);margin:16px 0 0;font-size:17px;font-weight:300}
+
+/* filters */
+.bar{position:sticky;top:84px;z-index:40;background:rgba(7,8,10,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-block:1px solid var(--line)}
+.bar-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding-block:14px}
+.group{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.group .lbl{font-size:12px;color:var(--dim);letter-spacing:.08em;margin-inline-end:4px}
+.chip{height:36px;padding-inline:14px;border:1px solid var(--line-2);border-radius:999px;font-size:14px;color:#c9ccd0;transition:border-color .25s,background .25s,color .25s;display:inline-flex;align-items:center;gap:8px}
+.chip:hover{border-color:#fff;color:#fff}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#0a0a0a;font-weight:700}
+.chip .n{font-family:var(--latin);font-size:13px;opacity:.7}
+.chip.b-ktm[aria-pressed="true"]{background:var(--ktm);border-color:var(--ktm)}
+.chip.b-bh[aria-pressed="true"]{background:var(--bh);border-color:var(--bh);color:#fff}
+.chip.b-whistle[aria-pressed="true"]{background:var(--whistle);border-color:var(--whistle)}
+.sort{margin-inline-start:auto;display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.sort select{height:36px;background:var(--surface);color:var(--text);border:1px solid var(--line-2);border-radius:10px;padding-inline:10px;font:inherit}
+.count{font-size:14px;color:var(--muted)}
+.count b{color:var(--text);font-family:var(--latin);font-size:18px}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;padding-block:28px 72px}
+.card{--c:var(--accent);position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .4s var(--ease),border-color .4s,box-shadow .4s}
+.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--c) 60%,transparent);box-shadow:0 18px 40px -20px color-mix(in srgb,var(--c) 45%,transparent)}
+.card[data-b="ktm"]{--c:var(--ktm)}.card[data-b="bh"]{--c:var(--bh)}.card[data-b="whistle"]{--c:var(--whistle)}
+.pic{position:relative;aspect-ratio:4/3;background:linear-gradient(180deg,#f4f4f2,#e7e7e4);display:grid;place-items:center;overflow:hidden}
+.pic img{width:92%;height:88%;object-fit:contain;transition:transform .7s var(--ease)}
+.card:hover .pic img{transform:scale(1.05)}
+.tag{position:absolute;top:12px;inset-inline-start:12px;height:26px;padding-inline:10px;border-radius:999px;background:rgba(7,8,10,.82);color:#fff;font-size:12px;display:flex;align-items:center}
+.brand{position:absolute;top:12px;inset-inline-end:12px;height:24px;display:flex;align-items:center;padding:4px 8px;border-radius:6px;background:rgba(7,8,10,.82)}
+.brand img{height:14px;width:auto}
+.brand.bh img{height:20px}
+.brand.whistle img{height:8px}
+.body{display:flex;flex-direction:column;gap:6px;padding:16px 18px 18px;flex:1}
+.body h2{margin:0;font-family:var(--latin);font-weight:700;font-size:24px;letter-spacing:.03em;line-height:1.05;direction:ltr;text-align:right}
+.body h2 span{color:var(--c)}
+.spec{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.price{font-family:var(--latin);font-weight:700;font-size:24px;letter-spacing:.02em;direction:ltr}
+.price small{font-size:14px;color:var(--muted);margin-inline-start:2px}
+.go{font-size:14px;font-weight:700;color:var(--c);display:inline-flex;align-items:center;gap:6px}
+.card a.cover{position:absolute;inset:0;z-index:1}
+.empty{grid-column:1/-1;text-align:center;padding:60px 16px;border:1px dashed var(--line-2);border-radius:18px;color:var(--muted)}
+.empty h3{margin:0 0 8px;color:var(--text);font-size:22px}
+.empty a{color:var(--accent);font-weight:700}
+
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--dim);font-size:13px}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+@media (max-width:900px){.nav-links{display:none}.nav{gap:16px}.nav .logo img{height:42px}.bar{top:84px}.sort{margin-inline-start:0}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}.group .lbl{width:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="https://motosportsales.wobily.com/" target="_top" aria-label="D.L.B Motosport — דף הבית"><img src="./logo-dlb-white.png" alt="D.L.B Motosport — The Best Adventure You Can Get" width="720" height="156"></a>
+    <nav class="nav-links" aria-label="ניווט ראשי">
+      <a href="https://motosportsales.wobily.com/" target="_top">ראשי</a>
+      <a href="#all" aria-current="page">קטלוג</a>
+      <a href="#ktm">KTM</a>
+      <a href="#bh">BH</a>
+      <a href="#whistle">Whistle</a>
+    </nav>
+    <a class="nav-cta" href="https://motosportsales.wobily.com/#dealers" target="_top">מצא משווק</a>
+  </div>
+</header>
+
+<main>
+  <section class="head">
+    <div class="container">
+      <p class="crumbs"><a href="https://motosportsales.wobily.com/" target="_top">ראשי</a><span aria-hidden="true">/</span><span>קטלוג דגמים</span></p>
+      <p class="kicker">MODEL CATALOG</p>
+      <h1 id="title">קטלוג <span>הדגמים</span></h1>
+      <p class="lead" id="lead">כל דגמי KTM, BH ו-Whistle במקום אחד. סננו לפי מותג או סוג רכיבה ולחצו על דגם למפרט המלא.</p>
+    </div>
+  </section>
+
+  <div class="bar">
+    <div class="container bar-in">
+      <div class="group" role="group" aria-label="מותג">
+        <span class="lbl">מותג</span>
+        <button class="chip" data-f="brand" data-v="all" aria-pressed="true">הכל <span class="n" data-n="brand:all"></span></button>
+        <button class="chip b-ktm" data-f="brand" data-v="ktm" aria-pressed="false">KTM <span class="n" data-n="brand:ktm"></span></button>
+        <button class="chip b-bh" data-f="brand" data-v="bh" aria-pressed="false">BH <span class="n" data-n="brand:bh"></span></button>
+        <button class="chip b-whistle" data-f="brand" data-v="whistle" aria-pressed="false">Whistle <span class="n" data-n="brand:whistle"></span></button>
+      </div>
+      <div class="group" role="group" aria-label="סוג רכיבה">
+        <span class="lbl">סוג</span>
+        <button class="chip" data-f="type" data-v="all" aria-pressed="true">הכל</button>
+        <button class="chip" data-f="type" data-v="mtb" aria-pressed="false">הרים <span class="n" data-n="type:mtb"></span></button>
+        <button class="chip" data-f="type" data-v="emtb" aria-pressed="false">חשמליים <span class="n" data-n="type:emtb"></span></button>
+        <button class="chip" data-f="type" data-v="road" aria-pressed="false">כביש <span class="n" data-n="type:road"></span></button>
+        <button class="chip" data-f="type" data-v="gravel" aria-pressed="false">גראבל <span class="n" data-n="type:gravel"></span></button>
+        <button class="chip" data-f="type" data-v="urban" aria-pressed="false">עירוני <span class="n" data-n="type:urban"></span></button>
+      </div>
+      <label class="sort">מיון
+        <select id="sort">
+          <option value="rec">מומלץ</option>
+          <option value="asc">מחיר: מהנמוך לגבוה</option>
+          <option value="desc">מחיר: מהגבוה לנמוך</option>
+        </select>
+      </label>
+      <p class="count" aria-live="polite"><b id="cnt">18</b> דגמים</p>
+    </div>
+  </div>
+
+  <div class="container"><div class="grid" id="grid"></div></div>
+</main>
+
+<footer><div class="container row"><span>© 2026 D.L.B Motosport · חברה בקבוצת לובינסקי</span><span>המחירים הם מחירים מומלצים לצרכן ועשויים להשתנות אצל המשווקים.</span></div></footer>
+
+<script>
+(function(){
+  var SITE='https://motosportsales.wobily.com', IMG='https://cdna.wobily.com/images/';
+  var LOGO={ktm:'./logo-ktm-white.svg',bh:'./logo-bh-white.png',whistle:'./logo-whistle-white.png'};
+  var TYPE={emtb:'חשמלי',mtb:'הרים',road:'כביש',gravel:'גראבל',urban:'עירוני'};
+  function P(b,t,a,s,type,p,img,slug,spec){return {b:b,t:t,a:a,s:s,type:type,p:+p,img:img,slug:slug,spec:spec};}
+  var D=[
+    P('ktm','e-MTB','Macina Kapoho','Master','emtb',34900,'8b381816-1fcf-48e6-8d4f-142bcebeb3e3_500.jpg','Macina-Kapoho-Master-2025','אנדורו חשמלי · שלדת קרבון · Bosch CX · 800Wh · 160 מ״מ'),
+    P('ktm','e-MTB','Macina Prowler','Exonic CX-R','emtb',54900,'f6b3fa6c-6738-45ec-a666-04c6eabf8692_500.jpg','Macina-Prowler-Exonic-CX-R-2026','אנדורו חשמלי · מתלים 180/170 מ״מ · Bosch CX 120Nm'),
+    P('ktm','e-MTB','Macina Kapoho','Prestige','emtb',39900,'caf61d8f-31ed-4494-b3f9-1635fdf6faa3_500.jpg','Macina-Kapoho-Prestige-2025','אנדורו חשמלי · שלדת קרבון · Bosch CX · 800Wh · 160 מ״מ'),
+    P('ktm','e-MTB','Macina Scarp SX','Prime','emtb',45000,'130a045f-18c1-49d2-b7ab-b84b395ed671_500.jpg','Macina-Scarp-SX-Prime','טרייל חשמלי קל · שלדת קרבון · Bosch SX · 400Wh'),
+    P('ktm','MTB','Scarp','Exonic','mtb',56900,'2f8bb8f6-11b6-4b37-bee3-1455dd4c65cf_500.png','SCARP-EXONIC-2026','XC · קרבון מלא · 110 מ״מ · 29″ · SRAM XX SL'),
+    P('ktm','MTB','Scarp MT','Master','mtb',27900,'974c8fcc-ab2c-4c02-b833-c69ff4ac5800_500.png','SCARP-MT-MASTER-2026','אופני הרים · שיכוך מלא · 2026'),
+    P('ktm','Gravel','Gravelator','Pro','gravel',10900,'b230422e-3c78-4365-90a2-f0ab2945ff7a_500.png','GRAVELATOR-PRO-2026','גראבל · 2026'),
+    P('bh','e-MTB','iLYNX+ DL Enduro','9.7','emtb',40900,'443cba4d-2b72-4458-b1b4-6710d042a496_500.jpg','iLYNX-DL-ENDURO-CARBON-9-7','אנדורו חשמלי · קרבון · Avinox · 800Wh · Shimano XT Di2'),
+    P('bh','e-MTB','iLYNX+ DL Enduro','9.8','emtb',45900,'708e0787-9a63-4c71-91d0-de4e5f7d6bba_500.jpg','iLYNX-DL-ENDURO-CARBON-9-8','אנדורו חשמלי · קרבון · Avinox · 800Wh · Shimano XTR Di2'),
+    P('bh','e-MTB','iLYNX+ SL Trail','8.7','emtb',38900,'00fc783e-f2c5-4435-83f7-5903ead62186_500.jpg','BH-iLynx-SL-Trail-Carbon-8-7','טרייל חשמלי קל · שלדת קרבון'),
+    P('bh','e-MTB','iLYNX+ NX Trail','8.8','emtb',49900,'3352beb9-46e3-4268-9c2e-26eec2c618aa_500.jpg','BH-iLynx-NX-Trail-Carbon-8-8-2026','טרייל חשמלי · קרבון · Bosch CX · 800Wh'),
+    P('bh','MTB','LYNX SLS','9.5','mtb',48900,'5b2519c8-004a-498c-8892-5d1cec93a192_500.jpg','BH-LYNX-SLS-9-5','אופני הרים · קרבון Ultralight · Split Pivot'),
+    P('bh','Road','RS1','5.5','road',31900,'c5ced817-f186-477f-82b7-65c51e9927e5_500.jpg','BH-RS1-5-5-AERO-ENDURANCE-Gran-Fondo','כביש Aero-Endurance · קרבון · Shimano Ultegra'),
+    P('bh','Road','Aerolight','7.0','road',32900,'f0329381-0c21-4094-9420-86f421925329_500.jpg','BH-Aerolight-7-0','כביש איירו · קרבון'),
+    P('whistle','e-MTB','AXR','C10.6','emtb',44900,'96118060-179e-4b5e-bdef-ba4425d2fa7c_500.jpg','Whistle-Axr-C10-6','e-MTB · שלדת קרבון · תוצרת איטליה'),
+    P('whistle','e-MTB','B-Rush','C12.5','emtb',37900,'e13003a8-da1b-4f89-9041-6adf6cdd584b_500.jpg','B-RUSH-C12-5','e-MTB · שלדת קרבון · Bosch'),
+    P('whistle','e-MTB','B-Rush','C10.5','emtb',33900,'ea950663-aa34-4a68-80ac-baff30f1cf9d_500.jpg','B-RUSH-C10-5','e-MTB · שלדת קרבון · Bosch'),
+    P('whistle','Gravel','Kiowa','XPLR','gravel',29900,'a79c0ce9-5358-46e0-b458-fea485619dac_500.jpg','Whistle-Kiowa-XPLR','גראבל · קרבון · SRAM Rival XPLR AXS 13 · גלגלי קרבון')
+  ];
+  var state={brand:'all',type:'all',sort:'rec'};
+  var grid=document.getElementById('grid'), cnt=document.getElementById('cnt');
+  function fmt(n){return n.toLocaleString('en-US');}
+  function card(x){
+    var el=document.createElement('article'); el.className='card'; el.dataset.b=x.b;
+    el.innerHTML='<div class="pic"><img src="'+IMG+x.img+'" alt="'+x.a+' '+x.s+'" loading="lazy" width="500" height="375"><span class="tag">'+x.t+'</span><span class="brand '+x.b+'"><img src="'+LOGO[x.b]+'" alt="'+x.b.toUpperCase()+'" width="100" height="30"></span></div>'+
+      '<div class="body"><h2>'+x.a+' <span>'+x.s+'</span></h2><p class="spec">'+x.spec+'</p>'+
+      '<div class="foot"><span class="price">'+fmt(x.p)+'<small>₪</small></span><span class="go">למפרט המלא ←</span></div></div>'+
+      '<a class="cover" href="'+SITE+'/p/'+x.slug+'" target="_top" aria-label="'+x.a+' '+x.s+' — למפרט המלא"></a>';
+    return el;
+  }
+  function render(){
+    var list=D.filter(function(x){return (state.brand=='all'||x.b==state.brand)&&(state.type=='all'||x.type==state.type);});
+    if(state.sort=='asc') list.sort(function(a,b){return a.p-b.p}); else if(state.sort=='desc') list.sort(function(a,b){return b.p-a.p});
+    grid.innerHTML='';
+    if(!list.length){ grid.innerHTML='<div class="empty"><h3>אין כרגע דגמים בסינון הזה</h3><p>נשמח לעזור למצוא את האופניים המתאימים. <a href="'+SITE+'/#dealers" target="_top">מצאו משווק קרוב ←</a></p></div>'; }
+    list.forEach(function(x){grid.appendChild(card(x));});
+    cnt.textContent=list.length;
+    document.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed', String(state[c.dataset.f]==c.dataset.v));});
+    var acc={all:'#ff6a00',ktm:'#ff6a00',bh:'#e30613',whistle:'#14c8c2'}[state.brand];
+    document.documentElement.style.setProperty('--accent',acc);
+  }
+  document.querySelectorAll('[data-n]').forEach(function(s){var k=s.dataset.n.split(':');s.textContent=D.filter(function(x){return k[1]=='all'||x[k[0]=='brand'?'b':'type']==k[1];}).length;});
+  document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){state[c.dataset.f]=c.dataset.v;render();});});
+  document.getElementById('sort').addEventListener('change',function(e){state.sort=e.target.value;render();});
+  function fromHash(){
+    var h=(location.hash||'').replace('#','').toLowerCase();
+    if(['ktm','bh','whistle'].indexOf(h)>=0){state.brand=h;state.type='all';}
+    else if(['mtb','emtb','road','gravel','urban'].indexOf(h)>=0){state.type=h;state.brand='all';}
+    else if(h=='all'){state.brand='all';state.type='all';}
+    render();
+  }
+  addEventListener('hashchange',fromHash);
+  fromHash();
+})();
+</script>
+</body>
+</html>
